@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <style>
+        table, th, td{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <h3>Links</h3>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">about</a></li>
+        <li><a href="/contact">contact</a></li>
+    </ul>
+    <h1>Web server node js</h1>
+    <p>welcome to my contact page</p>
+
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>Email</th>
+        </tr> 
+        <!-- mengecek apakah ada data di variable cont -->
+        <% if (cont.length < 1) { %> <!-- jika data kurang dari 1 atau tidak ada data-->
+            <p>data tidak ada</p> <!--tampilkan alert disamping-->
+        <% } else { %> <!-- jika ada data-->
+            <!-- lakukan perulangan data menggunakan foreach -->
+            <% cont.forEach(cnt => { %>
+                <tr>
+                    <td><%= cnt.name %></td>
+                    <td><%= cnt.email %></td>
+                </tr>
+            <% }) %>
+        <% }%>
+        
+    </table>   
+</body>
+</html>
